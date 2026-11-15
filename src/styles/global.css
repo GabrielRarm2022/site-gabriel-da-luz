@@ -1,0 +1,49 @@
+:root {
+  --fundo: #ffffff;
+  --fundo-suave: #f5f7f4;
+  --texto: #0f0f0f;
+  --cinza: #6b716c;
+  --linha: #e6e8e5;
+  --verde: #19bd5f;
+  --verde-escuro: #128a45; /* só para texto verde em fundo branco (contraste) */
+  --azul: #4119bd;
+  --titulo: 'MuseoModerno', system-ui, sans-serif;
+  --corpo: 'Manrope', system-ui, sans-serif;
+  --largura: 1080px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--corpo);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.container { max-width: var(--largura); margin: 0 auto; padding: 0 20px; }
+section { padding: 96px 0; }
+h1, h2, h3 { font-family: var(--titulo); line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 32px; max-width: 760px; }
+.verde { color: var(--verde-escuro); }
+.selo {
+  display: inline-block; font-size: 13px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--cinza); margin-bottom: 24px;
+}
+.selo::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--verde); margin-right: 10px; vertical-align: middle; }
+.botao {
+  display: inline-block; background: var(--texto); color: #fff; text-decoration: none;
+  font-weight: 700; padding: 16px 28px; border-radius: 999px; transition: background .2s, transform .2s;
+}
+.botao:hover { background: var(--verde-escuro); transform: translateY(-1px); }
+.botao.verde-fundo { background: var(--verde); color: var(--texto); }
+.botao.verde-fundo:hover { background: #fff; }
+.link { font-weight: 700; text-decoration: underline; text-decoration-color: var(--verde); text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.botao:focus-visible, .link:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+.borda-topo { border-top: 1px solid var(--linha); }
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  section { padding: 64px 0; }
+}

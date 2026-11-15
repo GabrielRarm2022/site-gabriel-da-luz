@@ -1,16 +1,210 @@
 ---
+import '../styles/global.css';
+import { links, seo, hero, identificacao, historia, numeros, marcos, temas, canais, rarm, final } from '../data/site';
+const externo = (url: string) => url.startsWith('http');
 ---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{seo.titulo}</title>
+    <meta name="description" content={seo.descricao} />
+    <meta property="og:title" content={seo.titulo} />
+    <meta property="og:description" content={seo.descricao} />
+    <meta property="og:image" content="/img/gabriel.jpg" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=MuseoModerno:wght@600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="topo container">
+      <a href="#" class="marca">gabriel<span class="verde">.</span>da luz</a>
+      <a class="link" href={links.newsletter} {...(externo(links.newsletter) && { target: '_blank', rel: 'noopener' })}>Newsletter</a>
+    </header>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+    <main>
+      <!-- 1. Promessa (gatilho: antecipação e novidade) -->
+      <section class="hero">
+        <div class="container hero-grade">
+          <div>
+            <span class="selo">{hero.selo}</span>
+            <h1>{hero.titulo[0]} <span class="verde">{hero.titulo[1]}</span>, {hero.titulo[2]}</h1>
+            <p class="sub">{hero.subtitulo}</p>
+            <div class="acoes">
+              <a class="botao" href={links.newsletter} {...(externo(links.newsletter) && { target: '_blank', rel: 'noopener' })}>{hero.cta}</a>
+              <a class="link" href={links.youtube} target="_blank" rel="noopener">{hero.ctaSecundario}</a>
+            </div>
+          </div>
+          <img class="foto" src="/img/gabriel.jpg" width="514" height="720" alt="Gabriel da Luz sorrindo, de óculos e camiseta preta da RARM" />
+        </div>
+      </section>
+
+      <!-- 2. Identificação (gatilho: empatia e dor) -->
+      <section class="borda-topo">
+        <div class="container">
+          <h2>{identificacao.titulo}</h2>
+          <ul class="lista-dor">
+            {identificacao.itens.map((i) => <li>{i}</li>)}
+          </ul>
+          <p class="fecho">{identificacao.fecho}</p>
+        </div>
+      </section>
+
+      <!-- 3. História (gatilho: história e jornada) -->
+      <section class="escuro">
+        <div class="container historia">
+          <h2>{historia.titulo}</h2>
+          <div class="texto">
+            {historia.paragrafos.map((p) => <p>{p}</p>)}
+          </div>
+          <blockquote>“{historia.frase}”</blockquote>
+        </div>
+      </section>
+
+      <!-- 4. Autoridade e prova (gatilhos: autoridade e prova social) -->
+      <section>
+        <div class="container">
+          <div class="numeros">
+            {numeros.map((n) => (
+              <div class="numero">
+                <strong>{n.valor}</strong>
+                <span>{n.legenda}</span>
+              </div>
+            ))}
+          </div>
+          {marcos.length > 0 && (
+            <ol class="marcos">
+              {marcos.map((m) => <li><span>{m.ano}</span>{m.texto}</li>)}
+            </ol>
+          )}
+        </div>
+      </section>
+
+      <!-- 5. Temas (gatilho: reciprocidade, o que você ganha) -->
+      <section class="borda-topo">
+        <div class="container">
+          <h2>{temas.titulo}</h2>
+          <div class="temas">
+            {temas.itens.map((t) => (
+              <div class="tema"><h3>{t.nome}</h3><p>{t.texto}</p></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Canais (gatilhos: comunidade e exclusividade) -->
+      <section class="suave">
+        <div class="container">
+          <h2>{canais.titulo}</h2>
+          <div class="canais">
+            {canais.itens.map((c) => {
+              const url = links[c.chave as keyof typeof links];
+              return (
+                <a class="canal" href={url} {...(externo(url) && { target: '_blank', rel: 'noopener' })}>
+                  <span class="canal-nome">{c.nome}</span>
+                  <h3>{c.destaque}</h3>
+                  <p>{c.texto}</p>
+                  <span class="link">{c.cta} →</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. RARM (captação de lead) -->
+      <section>
+        <div class="container rarm">
+          <div>
+            <span class="selo">RARM Contabilidade</span>
+            <h2>{rarm.titulo}</h2>
+            <p>{rarm.texto}</p>
+          </div>
+          <a class="botao" href={links.rarm} target="_blank" rel="noopener">{rarm.cta}</a>
+        </div>
+      </section>
+
+      <!-- 8. Newsletter no final (gatilho: chamada única e clara) -->
+      <section id="newsletter" class="escuro">
+        <div class="container final">
+          <h2>{final.titulo}</h2>
+          <p>{final.texto}</p>
+          {links.newsletterEmbed ? (
+            <iframe src={links.newsletterEmbed} width="480" height="150" title="Assinar a newsletter no Substack" loading="lazy" style="border:0;background:transparent;max-width:100%"></iframe>
+          ) : (
+            <a class="botao verde-fundo" href={links.newsletter} {...(externo(links.newsletter) && { target: '_blank', rel: 'noopener' })}>{final.cta}</a>
+          )}
+          <p class="assinatura">{final.assinatura}</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container rodape">
+      <span>© {new Date().getFullYear()} Gabriel da Luz · Curitiba/PR</span>
+      <nav>
+        <a href={links.youtube} target="_blank" rel="noopener">YouTube</a>
+        <a href={links.instagram} target="_blank" rel="noopener">Instagram</a>
+        <a href={links.rarm} target="_blank" rel="noopener">RARM</a>
+      </nav>
+    </footer>
+  </body>
 </html>
+
+<style>
+  .topo { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; padding-bottom: 28px; }
+  .marca { font-family: var(--titulo); font-weight: 800; font-size: 22px; text-decoration: none; }
+  .hero { padding-top: 40px; }
+  .hero-grade { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 56px; align-items: center; }
+  h1 { font-size: clamp(38px, 6vw, 64px); margin-bottom: 24px; }
+  .sub { color: var(--cinza); font-size: 20px; max-width: 560px; margin-bottom: 36px; }
+  .acoes { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .foto { width: 100%; max-width: 400px; justify-self: end; border-radius: 24px; aspect-ratio: 514/720; object-fit: cover; }
+  .lista-dor { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px; max-width: 900px; }
+  .lista-dor li { padding-left: 28px; position: relative; }
+  .lista-dor li::before { content: ''; position: absolute; left: 0; top: 0.75em; width: 14px; height: 2px; background: var(--verde); }
+  .fecho { margin-top: 40px; font-family: var(--titulo); font-size: 24px; font-weight: 700; }
+  .escuro { background: var(--texto); color: #fff; }
+  .historia { max-width: 760px; }
+  .historia .texto p { margin-bottom: 20px; color: rgba(255,255,255,.82); }
+  blockquote { margin-top: 40px; font-family: var(--titulo); font-size: clamp(24px, 3vw, 32px); line-height: 1.3; color: var(--verde); }
+  .numeros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .numero { border-left: 2px solid var(--verde); padding-left: 20px; }
+  .numero strong { display: block; font-family: var(--titulo); font-size: clamp(32px, 4vw, 48px); line-height: 1.1; }
+  .numero span { color: var(--cinza); }
+  .marcos { list-style: none; margin-top: 56px; display: grid; gap: 12px; }
+  .marcos span { font-weight: 800; margin-right: 16px; color: var(--verde-escuro); }
+  .temas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .tema h3, .canal h3 { font-family: var(--corpo); font-weight: 800; letter-spacing: -0.02em; }
+  .tema h3 { font-size: 20px; margin-bottom: 8px; }
+  .tema p { color: var(--cinza); font-size: 16px; }
+  .suave { background: var(--fundo-suave); }
+  .canais { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .canal { background: #fff; border: 1px solid var(--linha); border-radius: 20px; padding: 32px; text-decoration: none; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+  .canal:hover { border-color: var(--verde); transform: translateY(-2px); }
+  .canal-nome { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--cinza); }
+  .canal h3 { font-size: 24px; }
+  .canal p { color: var(--cinza); font-size: 16px; flex: 1; }
+  .rarm { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+  .rarm p { color: var(--cinza); max-width: 640px; }
+  .rarm h2 { margin-bottom: 16px; }
+  .final { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .final h2 { margin-bottom: 16px; }
+  .final > p { color: rgba(255,255,255,.75); max-width: 560px; margin-bottom: 32px; }
+  .assinatura { margin-top: 56px !important; font-size: 15px; color: rgba(255,255,255,.5) !important; }
+  .rodape { display: flex; justify-content: space-between; padding-top: 32px; padding-bottom: 32px; font-size: 14px; color: var(--cinza); gap: 16px; flex-wrap: wrap; }
+  .rodape nav { display: flex; gap: 20px; }
+  .rodape a { text-decoration: none; }
+  .rodape a:hover { color: var(--texto); }
+  @media (max-width: 860px) {
+    .hero-grade { grid-template-columns: 1fr; gap: 40px; }
+    .foto { justify-self: start; max-width: 320px; order: -1; }
+    .temas { grid-template-columns: 1fr 1fr; }
+    .canais { grid-template-columns: 1fr; }
+    .rarm { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 560px) {
+    .lista-dor, .numeros, .temas { grid-template-columns: 1fr; }
+  }
+</style>
