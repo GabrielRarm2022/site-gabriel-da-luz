@@ -1,6 +1,6 @@
 // Todos os textos e links do site ficam aqui.
 // Para mudar um texto ou link, mude só este arquivo.
-// Base: plano do perfil pessoal (card 8935 no Odoo, 15/11/2026) e persona do Gabriel (14/11/2026).
+// Base: plano do perfil pessoal (15/11/2026) e persona do Gabriel (14/11/2026).
 
 // Marca de origem nos links (UTM). Serve para o Odoo saber que o lead veio do "Perfil Gabriel".
 const utm = (meio: string) => `utm_source=perfil-gabriel&utm_medium=${meio}&utm_campaign=service-as-software`;
@@ -67,7 +67,7 @@ export const historia = {
     'Tomei decisões difíceis. Desliguei pessoas, projetos e fornecedores. Errei, ajustei e segui.',
     'Hoje a RARM passou dos 7 dígitos e usa agentes de IA na operação. O próximo objetivo está escrito: 8 dígitos. E eu vou mostrar o caminho inteiro.',
   ],
-  frase: 'O que nos trouxe até aqui não é o que vai nos levar ao próximo nível.',
+  frase: 'As coisas não vão ficar mais fáceis. A gente é que vai ficar mais forte.',
   fotoAlt: 'Gabriel da Luz gravando vídeo no escritório, de óculos e blusa cinza',
 };
 
