@@ -1,38 +1,59 @@
 // Todos os textos e links do site ficam aqui.
 // Para mudar um texto ou link, mude só este arquivo.
+// Base: plano do perfil pessoal (card 8935 no Odoo, 15/11/2026) e persona do Gabriel (14/11/2026).
 
-// PENDENTE: o Gabriel precisa passar estes dois links.
+// Marca de origem nos links (UTM). Serve para o Odoo saber que o lead veio do "Perfil Gabriel".
+const utm = (meio: string) => `utm_source=perfil-gabriel&utm_medium=${meio}&utm_campaign=service-as-software`;
+
+// PENDENTE: o Gabriel precisa passar os links que ainda estão com '#'.
+// Enquanto o link começar com '#', o botão some ou aparece como "Em breve".
 export const links = {
   newsletter: '#newsletter', // PENDENTE: link do Substack "Service as Software"
   newsletterEmbed: '', // PENDENTE: ex. https://NOME.substack.com/embed
-  whatsappGrupo: '#comunidade', // PENDENTE: link de convite do grupo
+  whatsappGrupo: '#comunidade', // PENDENTE: link de convite do grupo de avisos
+  linkedin: '#linkedin', // PENDENTE: perfil do Gabriel no LinkedIn
+  tiktok: '#tiktok', // PENDENTE: perfil no TikTok (sugestão: @ogabrieldaluz)
   youtube: 'https://www.youtube.com/@ogabrieldaluzz',
   instagram: 'https://www.instagram.com/ogabrieldaluz/',
-  rarm: 'https://rarmcontabilidade.com.br/?utm_source=site-gabriel&utm_medium=landing',
+  rarm: `https://rarmcontabilidade.com.br/?${utm('site')}`,
 };
 
 export const seo = {
-  titulo: 'Gabriel da Luz | Construindo uma empresa de 8 dígitos',
+  titulo: 'Gabriel da Luz | Service as Software',
   descricao:
-    'Bastidores reais de quem está construindo uma empresa de 8 dígitos. Gestão, gente, dinheiro de empresa e IA para donos de empresas de serviço.',
+    'Como escalar uma empresa de serviços: processo, IA e gente no lugar certo. Bastidores reais da RARM, construída em público rumo aos 8 dígitos.',
 };
 
 export const hero = {
   selo: 'Gabriel da Luz · CEO da RARM',
-  titulo: ['Construindo uma empresa de', '8 dígitos', 'com bastidores reais.'],
+  titulo: ['Service as Software:', 'como escalar uma', 'empresa de serviços.'],
   subtitulo:
-    'Toda semana eu conto o que está dando certo, o que deu errado e o que eu aprendi tocando uma empresa de serviço no Brasil. Sem curso, sem fórmula mágica.',
-  cta: 'Quero receber a newsletter',
+    'Estou transformando uma contabilidade numa empresa de serviço que roda como software. Mostro tudo em público: as decisões, os números que posso abrir e os erros. Rumo aos 8 dígitos.',
+  cta: 'Assinar a newsletter',
   ctaSecundario: 'Ver os vídeos no YouTube',
+  fotoAlt: 'Retrato de Gabriel da Luz, de óculos redondos e camiseta preta, em fundo escuro',
 };
 
-export const identificacao = {
-  titulo: 'Se você é dono de empresa de serviço, talvez se reconheça aqui.',
+export const conceito = {
+  selo: 'A ideia',
+  titulo: 'Serviço que escala como software.',
+  texto:
+    'Empresa de serviço costuma crescer contratando mais gente para fazer mais do mesmo. A margem não acompanha e o dono vira o gargalo. Service as Software é o caminho contrário:',
   itens: [
-    'Trabalha mais do que trabalhava na CLT e, no fim do mês, sobra menos.',
-    'Sente que a empresa depende de você para tudo.',
-    'Paga imposto sem entender direito o porquê nem quanto.',
-    'Sabe que precisa crescer, mas não sabe qual é o próximo passo.',
+    { numero: '01', nome: 'Processo vira sistema', texto: 'O que hoje está na cabeça de alguém vira passo escrito, depois vira fluxo automático.' },
+    { numero: '02', nome: 'IA faz a tarefa de robô', texto: 'Conferir, copiar, cobrar, organizar. A máquina faz para sobrar tempo ao humano.' },
+    { numero: '03', nome: 'Gente cuida da relação', texto: 'Relação entre pessoas não se automatiza. É onde o time faz diferença e o cliente fica.' },
+  ],
+};
+
+export const paraQuem = {
+  titulo: 'Para quem é',
+  intro: 'Donos de empresas de serviço que querem crescer sem virar refém da própria operação.',
+  itens: [
+    { nome: 'SaaS e microSaaS', texto: 'Produto rodando, mas suporte, onboarding e financeiro ainda no braço.' },
+    { nome: 'Agências', texto: 'Cada cliente novo pede mais uma pessoa no time.' },
+    { nome: 'Consultorias de marketing e IA', texto: 'Vendem eficiência, mas a própria operação ainda é manual.' },
+    { nome: 'Profissionais liberais', texto: 'Trabalham mais do que na CLT e, no fim do mês, sobra menos.' },
   ],
   fecho: 'Eu já estive exatamente aí.',
 };
@@ -44,9 +65,10 @@ export const historia = {
     'No começo eu trabalhava o dobro do que trabalhava na CLT e ganhava metade. Pensei em desistir mais de uma vez.',
     'Foi aí que entendi uma coisa: contador costuma ser profissional liberal, não empreendedor. Eu decidi construir uma empresa de verdade. De empreendedor para empreendedor.',
     'Tomei decisões difíceis. Desliguei pessoas, projetos e fornecedores. Errei, ajustei e segui.',
-    'Hoje a RARM passou dos 7 dígitos e o próximo objetivo está escrito: 8 dígitos. E eu vou mostrar o caminho inteiro, com os números que posso abrir e os erros que cometo.',
+    'Hoje a RARM passou dos 7 dígitos e usa agentes de IA na operação. O próximo objetivo está escrito: 8 dígitos. E eu vou mostrar o caminho inteiro.',
   ],
-  frase: 'As coisas não vão ficar mais fáceis. A gente é que vai ficar mais forte.',
+  frase: 'O que nos trouxe até aqui não é o que vai nos levar ao próximo nível.',
+  fotoAlt: 'Gabriel da Luz gravando vídeo no escritório, de óculos e blusa cinza',
 };
 
 export const numeros = [
@@ -61,11 +83,18 @@ export const marcos: { ano: string; texto: string }[] = [];
 export const temas = {
   titulo: 'Sobre o que eu escrevo e falo',
   itens: [
-    { nome: 'Bastidores da construção', texto: 'Decisões, números e erros reais de uma empresa crescendo.' },
-    { nome: 'Gestão e gente', texto: 'Contratar, desligar, liderar e montar time.' },
-    { nome: 'Dinheiro de empresa', texto: 'Imposto, caixa e preço, sem juridiquês.' },
-    { nome: 'IA e o novo escritório', texto: 'Como uso IA para tirar tarefa de robô das pessoas.' },
+    { nome: 'Build in public', texto: 'Decisões, números e erros reais de uma empresa de serviço crescendo.' },
+    { nome: 'Gestão e gente', texto: 'Contratar, desligar, liderar e montar time que roda sem o dono.' },
+    { nome: 'IA na operação', texto: 'Agentes e automações que eu uso de verdade, com o que deu certo e o que não deu.' },
+    { nome: 'Startups e crescimento', texto: 'O que empresa de serviço pode aprender com quem constrói software.' },
   ],
+};
+
+export const ecossistema = {
+  titulo: 'Construído junto com o ecossistema',
+  texto:
+    'Aceleração, eventos e troca com outros fundadores fazem parte do caminho. Muito do que eu publico nasce dessas conversas.',
+  fotoAlt: 'Gabriel da Luz com um grupo de empreendedores em um evento do ecossistema de startups',
 };
 
 export const canais = {
@@ -74,37 +103,53 @@ export const canais = {
     {
       nome: 'Newsletter',
       destaque: 'Service as Software',
-      texto: 'Um e-mail por semana com o que eu aprendi construindo a RARM. De graça.',
+      texto: 'Um e-mail por semana com a versão completa do que eu aprendi construindo a RARM. De graça.',
       cta: 'Assinar a newsletter',
       chave: 'newsletter',
     },
     {
       nome: 'YouTube',
       destaque: '@ogabrieldaluzz',
-      texto: 'Vídeos sobre negócios, finanças e filosofia. Vídeos novos toda semana.',
+      texto: 'Um vídeo longo por semana. É o centro de tudo: o resto nasce dele.',
       cta: 'Ver o canal',
       chave: 'youtube',
     },
     {
-      nome: 'Grupo privado no WhatsApp',
-      destaque: 'Comunidade',
-      texto: 'Onde eu publico os conteúdos primeiro e troco ideia com outros donos de empresa.',
-      cta: 'Entrar no grupo',
-      chave: 'whatsappGrupo',
+      nome: 'Instagram',
+      destaque: '@ogabrieldaluz',
+      texto: 'Cortes, carrosséis e bastidor do dia.',
+      cta: 'Seguir no Instagram',
+      chave: 'instagram',
+    },
+    {
+      nome: 'LinkedIn',
+      destaque: 'Gabriel da Luz',
+      texto: 'Reflexões da semana sobre gestão, IA e crescimento.',
+      cta: 'Seguir no LinkedIn',
+      chave: 'linkedin',
     },
   ],
 };
 
-export const rarm = {
-  titulo: 'A RARM é como eu cumpro a minha missão',
+export const comunidade = {
+  selo: 'Comunidade',
+  titulo: 'Grupo de avisos no WhatsApp',
   texto:
-    'A RARM Contabilidade é o meu principal projeto. Uma contabilidade feita por empreendedores para empresas de serviço: cuidamos do imposto, da folha e dos números para você focar no que faz a sua empresa crescer.',
+    'Quem está no grupo recebe os conteúdos primeiro. Por enquanto é só de avisos. Quando chegar a 100 membros, o grupo abre para debate entre os donos de empresa.',
+  cta: 'Entrar no grupo',
+  meta: 100,
+};
+
+export const rarm = {
+  titulo: 'A RARM é onde eu aplico tudo isso',
+  texto:
+    'A RARM Contabilidade é o meu principal projeto e o laboratório do Service as Software. Contabilidade feita por empreendedores para empresas de serviço: cuidamos do imposto, da folha e dos números para você focar no que faz a sua empresa crescer.',
   cta: 'Conhecer a RARM',
 };
 
 export const final = {
   titulo: 'Receba os bastidores toda semana',
-  texto: 'Um e-mail curto, direto, com o que funcionou e o que não funcionou. Se não gostar, sai com um clique.',
+  texto: 'Um e-mail curto, direto, com o que funcionou e o que não funcionou. Sempre grátis. Se não gostar, sai com um clique.',
   cta: 'Assinar de graça',
   assinatura: 'É nisso que eu acredito, é isso que eu prego, é isso que eu vivo.',
 };

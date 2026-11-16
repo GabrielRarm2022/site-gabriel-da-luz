@@ -1,0 +1,6 @@
+# 0003 – Site refeito para a tese Service as Software
+
+**Contexto:** em 15/11/2026 o Gabriel definiu um plano novo para o perfil pessoal (card 8935 no Odoo): tese "Service as Software, como escalar uma empresa de serviços", com build in public, gestão, IA e startups. O perfil vira canal de aquisição e autoridade da RARM (Gabriel gera demanda, André converte).
+**Decisão:** refazer a landing com essa tese. Entram: seção que explica o conceito, "Para quem é" com os 4 segmentos do ICP (SaaS e microSaaS, agências, consultorias de marketing e IA, profissionais liberais), comunidade como grupo de avisos que abre para debate com 100 membros, canais do plano (newsletter, YouTube, Instagram, LinkedIn), fotos da persona e UTM `utm_source=perfil-gabriel` no link da RARM.
+**Por quê:** o site precisa falar a mesma língua do conteúdo novo e medir quanto lead vem do perfil (origem "Perfil Gabriel" no Odoo). A ordem dos gatilhos (história, autoridade, prova, comunidade, exclusividade) continua a do briefing 0002.
+**Fotos:** o retrato do topo é o "retrato oficial" da persona (gerado por IA em 14/11 a partir das fotos reais). As outras duas são reais (gravação no escritório e evento Hello Sales). Se preferir só foto real no topo, troque `public/img/gabriel-retrato.jpg`.

@@ -21,7 +21,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 .container { max-width: var(--largura); margin: 0 auto; padding: 0 20px; }
 section { padding: 96px 0; }
@@ -47,3 +47,7 @@ h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 32px; max-width: 760px; }
   body { font-size: 17px; }
   section { padding: 64px 0; }
 }
+.escuro { background: var(--texto); color: #fff; }
+.escuro .selo { color: rgba(255,255,255,.65); }
+.escuro .link { text-decoration-color: var(--verde); }
+.suave { background: var(--fundo-suave); }
