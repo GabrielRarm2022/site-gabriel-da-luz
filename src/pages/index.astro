@@ -157,7 +157,7 @@ const urlCanonica = new URL('/', Astro.site).href;
               <h2>{ecossistema.titulo}</h2>
               <p class="intro">{ecossistema.texto}</p>
             </div>
-            <img class="foto-eco" src="/img/gabriel-ecossistema.jpg" width="720" height="900" alt={ecossistema.fotoAlt} loading="lazy" />
+            <img class="foto-eco" src="/img/time-rarm-escadaria.jpg" width="1440" height="960" alt={ecossistema.fotoAlt} loading="lazy" />
           </div>
           <h3 class="reco-titulo">Reconhecimentos da RARM</h3>
           <ul class="reco">
@@ -300,8 +300,8 @@ const urlCanonica = new URL('/', Astro.site).href;
   .marcos span { font-weight: 800; margin-right: 16px; color: var(--verde-escuro); }
   .temas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
   .tema h3 { font-size: 20px; margin-bottom: 8px; }
-  .eco-grade { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 56px; align-items: center; }
-  .foto-eco { border-radius: 24px; aspect-ratio: 4/5; object-fit: cover; max-width: 380px; justify-self: end; }
+  .eco-grade { display: grid; grid-template-columns: 1fr; gap: 32px; }
+  .foto-eco { border-radius: 24px; aspect-ratio: 3/2; object-fit: cover; width: 100%; height: auto; }
   .reco-titulo { font-family: var(--corpo); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; margin: 64px 0 24px; }
   .reco { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .reco-card { background: #fff; border: 1px solid var(--linha); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
@@ -341,7 +341,7 @@ const urlCanonica = new URL('/', Astro.site).href;
     .pilares { grid-template-columns: 1fr; gap: 28px; }
     .historia-grade, .eco-grade { grid-template-columns: 1fr; gap: 40px; }
     .foto-historia { position: static; max-width: 320px; }
-    .foto-eco { justify-self: start; max-width: 320px; }
+    .foto-eco { border-radius: 16px; }
     .canais { grid-template-columns: 1fr; }
     .rarm, .comunidade { flex-direction: column; align-items: flex-start; }
   }
