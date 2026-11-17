@@ -10,8 +10,8 @@ const utm = (meio: string) => `utm_source=perfil-gabriel&utm_medium=${meio}&utm_
 export const links = {
   newsletter: '#newsletter', // PENDENTE: link do Substack "Service as Software"
   newsletterEmbed: '', // PENDENTE: ex. https://NOME.substack.com/embed
-  whatsappGrupo: '#comunidade', // PENDENTE: link de convite do grupo de avisos
-  linkedin: '#linkedin', // PENDENTE: perfil do Gabriel no LinkedIn
+  whatsappGrupo: 'https://chat.whatsapp.com/JzXx3S2C88AKUQ37V4OrLP',
+  linkedin: 'https://www.linkedin.com/in/gabriel-da-luz-a45a7712a/',
   tiktok: '#tiktok', // PENDENTE: perfil no TikTok (sugestão: @ogabrieldaluz)
   youtube: 'https://www.youtube.com/@ogabrieldaluzz',
   instagram: 'https://www.instagram.com/ogabrieldaluz/',
