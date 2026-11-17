@@ -96,7 +96,7 @@ export const ecossistema = {
   titulo: 'Construído junto com o ecossistema',
   texto:
     'Aceleração, prêmios e troca com outros fundadores fazem parte do caminho. Muito do que eu publico nasce dessas conversas.',
-  fotoAlt: 'Gabriel da Luz com um grupo de empreendedores em um evento do ecossistema de startups',
+  fotoAlt: 'Time da RARM sentado numa escadaria, com camisetas pretas "Tamo junto! Rarm" e braços para o alto',
 };
 
 // Reconhecimentos da RARM. Fonte: apresentação institucional e "Quem sou eu" (SharePoint).
