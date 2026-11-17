@@ -46,12 +46,16 @@ const urlCanonica = new URL('/', Astro.site).href;
       <section class="hero">
         <div class="container hero-grade">
           <div class="hero-texto">
-            <span class="selo">{hero.selo}</span>
+            <div class="perfil">
+              <img class="avatar" src="/img/gabriel-perfil.jpg" width="240" height="240" alt={hero.fotoAlt} fetchpriority="high" />
+              <span class="selo">{hero.selo}</span>
+            </div>
             <h1>
               <span class="verde-claro">{hero.titulo[0]}</span>
               {' '}{hero.titulo[1]} {hero.titulo[2]}
             </h1>
             <p class="sub">{hero.subtitulo}</p>
+            <p class="gratis">{hero.gratis}</p>
             <div class="acoes">
               {newsletterPronta ? (
                 <>
@@ -63,7 +67,6 @@ const urlCanonica = new URL('/', Astro.site).href;
               )}
             </div>
           </div>
-          <img class="retrato" src="/img/gabriel-retrato.jpg" width="1200" height="896" alt={hero.fotoAlt} fetchpriority="high" />
         </div>
       </section>
     </div>
@@ -246,17 +249,16 @@ const urlCanonica = new URL('/', Astro.site).href;
   .marca { font-family: var(--titulo); font-weight: 800; font-size: 22px; text-decoration: none; }
   .ponto { color: var(--verde); }
   .hero { padding: 24px 0 0; overflow: hidden; }
-  .hero-grade { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; align-items: end; }
+  .hero-grade { max-width: 820px; }
   .hero-texto { padding-bottom: 96px; }
+  .perfil { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+  .perfil .selo { margin: 0; }
+  .avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid var(--verde); flex-shrink: 0; }
   h1 { font-size: clamp(38px, 5.6vw, 64px); margin-bottom: 24px; }
   .verde-claro { color: var(--verde); display: block; }
   .sub { color: rgba(255,255,255,.75); font-size: 20px; max-width: 540px; margin-bottom: 36px; }
+  .escuro .gratis { color: var(--verde); font-weight: 700; font-size: 15px; letter-spacing: .02em; margin: -20px 0 32px; }
   .acoes { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
-  .retrato {
-    width: 100%; aspect-ratio: 1200/896; object-fit: cover; object-position: 50% 20%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 22%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 22%);
-  }
   .escuro-texto { color: var(--cinza); }
   .intro { color: var(--cinza); font-size: 20px; max-width: 680px; margin-bottom: 48px; }
   .escuro .intro, .escuro p { color: rgba(255,255,255,.78); }
@@ -311,8 +313,6 @@ const urlCanonica = new URL('/', Astro.site).href;
     .segmentos, .temas { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 860px) {
-    .hero-grade { grid-template-columns: 1fr; gap: 0; }
-    .retrato { order: -1; -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); }
     .hero-texto { padding-bottom: 72px; }
     .pilares { grid-template-columns: 1fr; gap: 28px; }
     .historia-grade, .eco-grade { grid-template-columns: 1fr; gap: 40px; }

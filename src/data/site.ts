@@ -31,7 +31,8 @@ export const hero = {
     'Estou transformando uma contabilidade numa empresa de serviço que roda como software. Mostro tudo em público: as decisões, os números que posso abrir e os erros. Rumo aos 8 dígitos.',
   cta: 'Assinar a newsletter',
   ctaSecundario: 'Ver os vídeos no YouTube',
-  fotoAlt: 'Retrato de Gabriel da Luz, de óculos redondos e camiseta preta, em fundo escuro',
+  gratis: 'Tudo aqui é de graça: conteúdo, bastidores e materiais práticos.',
+  fotoAlt: 'Foto de Gabriel da Luz, de óculos e camisa polo preta da RARM, numa reunião',
 };
 
 export const conceito = {
@@ -143,8 +144,8 @@ export const comunidade = {
 export const rarm = {
   titulo: 'A RARM é onde eu aplico tudo isso',
   texto:
-    'A RARM Contabilidade é o meu principal projeto e o laboratório do Service as Software. Contabilidade feita por empreendedores para empresas de serviço: cuidamos do imposto, da folha e dos números para você focar no que faz a sua empresa crescer.',
-  cta: 'Conhecer a RARM',
+    'A RARM Contabilidade é o meu principal projeto e o laboratório do Service as Software. Contabilidade feita por empreendedores para empresas de serviço: cuidamos do imposto, da folha e dos números para você focar no que faz a sua empresa crescer. Se a sua empresa é do tipo que eu descrevi aqui, fale com o nosso time.',
+  cta: 'Falar com a RARM',
 };
 
 export const final = {
