@@ -73,7 +73,8 @@ export const historia = {
 };
 
 export const numeros = [
-  { valor: '+270', legenda: 'empresas atendidas pela RARM' },
+  { valor: '+500', legenda: 'empresas atendidas pela RARM na história' },
+  { valor: '+1.000', legenda: 'pessoas físicas (CPF) atendidas' },
   { valor: '7 dígitos', legenda: 'de faturamento alcançados' },
   { valor: '8 dígitos', legenda: 'é a próxima meta, construída em público' },
 ];
@@ -94,9 +95,20 @@ export const temas = {
 export const ecossistema = {
   titulo: 'Construído junto com o ecossistema',
   texto:
-    'Aceleração, eventos e troca com outros fundadores fazem parte do caminho. Muito do que eu publico nasce dessas conversas.',
+    'Aceleração, prêmios e troca com outros fundadores fazem parte do caminho. Muito do que eu publico nasce dessas conversas.',
   fotoAlt: 'Gabriel da Luz com um grupo de empreendedores em um evento do ecossistema de startups',
 };
+
+// Reconhecimentos da RARM. Fonte: apresentação institucional e "Quem sou eu" (SharePoint).
+// foto vazia = card só com texto (PENDENTE: o Gabriel mandar a foto).
+export const reconhecimentos: { nome: string; quem: string; ano: string; foto: string; alt: string }[] = [
+  { nome: 'Top 10 Startups do Paraná', quem: 'Sebrae Startups', ano: '2025', foto: '/img/reconhecimentos/sebrae-top10.jpg', alt: 'Selo Top 10 PR 2025 do Sebrae Startups com a marca da RARM' },
+  { nome: 'Startup acelerada', quem: 'Speedup PUCPR', ano: '2024', foto: '/img/reconhecimentos/speedup-pucpr.jpg', alt: 'Selo Startup Acelerada Speedup 2024' },
+  { nome: 'Programa de aceleração', quem: 'Inovativa Brasil', ano: '2023', foto: '/img/reconhecimentos/inovativa-grupo.jpg', alt: 'Grupo de empreendedores no evento Inovativa Experience' },
+  { nome: 'Startup do ecossistema', quem: 'Vale do Pinhão', ano: 'Curitiba', foto: '/img/reconhecimentos/vale-do-pinhao.jpg', alt: 'Marca do Vale do Pinhão, ecossistema de inovação de Curitiba' },
+  { nome: 'Capital Empreendedor', quem: 'Sebrae', ano: '2025', foto: '', alt: '' },
+  { nome: 'Parceiro oficial', quem: 'Banco Cora', ano: 'Parceria', foto: '/img/reconhecimentos/parceiro-cora.jpg', alt: 'Selo de parceiro do Banco Cora com a marca da RARM' },
+];
 
 export const canais = {
   titulo: 'Escolha onde quer me acompanhar',
