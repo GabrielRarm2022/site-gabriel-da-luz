@@ -4,7 +4,8 @@ dist/
 .astro/
 
 # dependencies
-node_modules/
+node_modules
+.claude/worktrees/
 
 # logs
 npm-debug.log*
@@ -26,3 +27,4 @@ pnpm-debug.log*
 .env.*
 !.env.example
 .vercel
+.playwright-mcp/

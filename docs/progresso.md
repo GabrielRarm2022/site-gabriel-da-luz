@@ -2,13 +2,16 @@
 
 ## Feito
 - 15/11/2026: repositório criado, esqueleto Astro, estrutura de contexto, proteção da `main`, Vercel ligada.
+- 15/11/2026: primeira versão da landing no ar (PR #1).
+- 16/11/2026: versão 2 com a tese Service as Software, persona e fotos novas (decisão 0003).
+- 17/11/2026: foto nova do Gabriel (camisa RARM) pequena e redonda no topo; aviso "tudo de graça"; botão "Falar com a RARM".
 
 ## Em andamento
-- Primeira versão da landing page (PR `feat/landing-v1`).
+- Versão 2: site refeito para a tese Service as Software (PR `feat/sas-v2`).
 
 ## Próximos passos
 - Gabriel validar textos e conquistas.
-- Colocar links reais: Substack e grupo do WhatsApp.
+- Colocar links reais: Substack, grupo de avisos do WhatsApp, LinkedIn e TikTok (todos em `src/data/site.ts`).
 - Domínio próprio (ainda não tem).
 
 ## Dúvidas em aberto
